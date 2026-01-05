@@ -1,0 +1,12 @@
+disabled = false
+languageCode = "gr"
+languageName = "Greek"
+weight = 2
+title = "🇬🇷【Greek in Japan】🇯🇵"
+
+[params]
+displayName = "GR 🇬🇷"
+isoCode = "gr"
+rtl = false
+dateFormat = "02 January 2006"
+description = "The untouristic sites of Japan"

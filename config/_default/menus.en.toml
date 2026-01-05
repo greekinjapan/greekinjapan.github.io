@@ -1,0 +1,58 @@
+[[main]]
+name = "Cities [A-Z]"
+pageRef = "/cities"
+weight = 1
+
+[[main]]
+name = "Areas"
+url = "/areas/"
+weight = 2
+
+[[main]]
+name = "Hokkaido"
+pageRef = "/areas/hokkaido/"
+parent = "Areas"
+weight = 3
+
+[[main]]
+name = "Honshu"
+parent = "Areas"
+pageRef = "/areas/honshu/"
+weight = 4
+
+[[main]]
+name = "Kyushu"
+parent = "Areas"
+pageRef = "/areas/kyushu/"
+weight = 5
+
+[[main]]
+name = "Okinawa"
+parent = "Areas"
+pageRef = "/areas/okinawa/"
+weight = 6
+
+[[main]]
+name = "Shikoku"
+parent = "Areas"
+pageRef = "/areas/shikoku/"
+weight = 7
+
+[[main]]
+name = "Support Us"
+pageRef = "/support"
+weight = 8
+
+[[main]]
+name = "YouTube"
+url = "https://youtube.com"
+pre = "youtube"
+weight = 9
+
+[[main]]
+name = "Tips"
+pageRef = "tips"
+weight = 3
+
+[[footer]]
+none = "none"

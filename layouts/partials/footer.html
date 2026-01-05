@@ -1,0 +1,178 @@
+<script>
+// document.addEventListener("DOMContentLoaded", () => {
+//   const nav = document.querySelector('nav.md\\:flex');
+//   if (!nav) return;
+
+//   // Separate icon buttons (search + theme) from menu items
+//   const iconButtons = Array.from(nav.querySelectorAll('button#search-button, button#appearance-switcher'));
+
+//   // Find all menu items (links and nested menu divs)
+//   const menuItems = Array.from(nav.children).filter(el =>
+//     !iconButtons.includes(el)
+//   );
+
+//   // Define desired order of menu items by their text
+//   const desiredOrder = [
+//     "Cities [A-Z]",
+//     "Areas",
+//     "Support Us",
+//     "YouTube"
+//   ];
+
+//   // Map menu items by name
+//   const menuMap = {};
+//   menuItems.forEach(el => {
+//     const nameEl = el.querySelector('p');
+//     if (nameEl) {
+//       menuMap[nameEl.textContent.trim()] = el;
+//     }
+//   });
+
+//   // Remove menu items from nav
+//   menuItems.forEach(el => nav.removeChild(el));
+
+//   // Append menu items in desired order
+//   desiredOrder.forEach(name => {
+//     if (menuMap[name]) {
+//       nav.appendChild(menuMap[name]);
+//     }
+//   });
+
+//   // Append any menu items not in desiredOrder at the end
+//   menuItems.forEach(el => {
+//     const nameEl = el.querySelector('p');
+//     if (nameEl && !desiredOrder.includes(nameEl.textContent.trim())) {
+//       nav.appendChild(el);
+//     }
+//   });
+
+//   // Append icon buttons at the end (far right)
+//   iconButtons.forEach(btn => nav.appendChild(btn));
+// });
+
+// langs
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+lang = document.location.pathname ;
+if (lang.includes("/gr/")) {
+  display_lang = "GR 🇬🇷" 
+}
+else if (lang.includes("/ja/")) {
+  display_lang = "JP 🇯🇵"
+}
+else {
+display_lang = "EN 🇬🇧"
+}
+
+document.querySelector("nav.hidden > div:nth-child(6) > div:nth-child(1) > div:nth-child(2)").textContent = display_lang;
+document.querySelector("div.items-center:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2)").textContent = display_lang;
+
+document.querySelector("nav.hidden > div:nth-child(6) > div:nth-child(1) > span:nth-child(1)").style = "display:none";
+document.querySelector("div.md\\:hidden:nth-child(3) > div:nth-child(2) > div:nth-child(1) > span:nth-child(1)").style = "display:none";
+
+});
+
+
+// sort menus
+
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector("nav.md\\:flex");
+  if (!nav) return;
+
+  /**
+   * MENU ORDER CONFIG
+   * Add ALL language variants here
+   */
+  const MENU_ORDER = [
+    {
+      order: 10,
+      names: ["Cities [A-Z]", "Πόλεις [A-Ω]", "都市一覧（A–Z）", "都市一覧 (A-Z)"]
+    },
+    {
+      order: 20,
+      names: ["Areas", "Περιοχές", "地方"]
+    },
+    {
+      order: 21,
+      names: ["Tips", "Συμβουλές", "コツ"]
+    },
+    {
+      order: 30,
+      names: ["Support Us", "Στηρίξτε μας", "支援する"]
+    },
+    {
+      order: 40,
+      names: ["YouTube", "ユーチューブ"]
+    }
+  ];
+
+  /** Normalize text */
+  const normalize = text =>
+    text.toLowerCase().replace(/\s+/g, " ").trim();
+
+  /** Extract visible label */
+  const extractLabel = el => {
+    const p = el.querySelector("p");
+    return p ? normalize(p.textContent) : "";
+  };
+
+  /** Match menu weight */
+  const getWeight = label => {
+    for (const item of MENU_ORDER) {
+      if (item.names.some(name => normalize(name) === label)) {
+        return item.order;
+      }
+    }
+    return 999;
+  };
+
+  /**
+   * CLASSIFIERS
+   */
+  const isSearch = el => el.querySelector("#search-button");
+  const isTheme = el => el.querySelector("#appearance-switcher");
+  const isLanguageSwitcher = el =>
+    el.querySelector("svg") &&
+    el.textContent.match(/\bEN\b|\bGR\b|\bJA\b/);
+
+  /**
+   * Split nav children
+   */
+  const sortable = [];
+  const fixedRight = [];
+
+  Array.from(nav.children).forEach(el => {
+    if (isSearch(el) || isTheme(el) || isLanguageSwitcher(el)) {
+      fixedRight.push(el);
+      return;
+    }
+
+    const label = extractLabel(el);
+    if (label) {
+      sortable.push({
+        el,
+        weight: getWeight(label)
+      });
+    } else {
+      fixedRight.push(el); // safety fallback
+    }
+  });
+
+  /**
+   * Clear nav
+   */
+  nav.innerHTML = "";
+
+  /**
+   * Rebuild nav
+   */
+  sortable
+    .sort((a, b) => a.weight - b.weight)
+    .forEach(item => nav.appendChild(item.el));
+
+  fixedRight.forEach(el => nav.appendChild(el));
+});
+
+
+</script>

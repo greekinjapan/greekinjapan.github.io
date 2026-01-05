@@ -1,0 +1,56 @@
+[[main]]
+name = "都市一覧 (A-Z)"
+pageRef = "/cities"
+weight = 10
+
+[[main]]
+name = "地方"
+pageRef = "/areas/"
+weight = 20
+
+[[main]]
+name = "コツ"
+pageRef = "tips"
+weight = 21
+
+[[main]]
+name = "北海道"
+pageRef = "/areas/hokkaido/"
+parent = "地方"
+weight = 30
+
+[[main]]
+name = "本州"
+parent = "地方"
+url = "/areas/honshu/"
+weight = 40
+
+[[main]]
+name = "九州"
+parent = "地方"
+url = "/areas/kyushu/"
+weight = 50
+
+[[main]]
+name = "沖縄"
+parent = "地方"
+url = "/areas/okinawa/"
+weight = 60
+
+[[main]]
+name = "四国"
+parent = "地方"
+url = "/areas/shikoku/"
+weight = 70
+
+[[main]]
+name = "支援する"
+pageRef = "/support"
+weight = 80
+
+[[main]]
+name = "YouTube"
+url = "https://youtube.com"
+pre = "youtube"
+weight = 90
+

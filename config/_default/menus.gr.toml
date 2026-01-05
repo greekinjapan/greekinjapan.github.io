@@ -1,0 +1,54 @@
+[[main]]
+name = "Πόλεις [A-Ω]"
+pageRef = "/cities"
+weight = 1
+
+[[main]]
+name = "Περιοχές"
+weight = 2
+
+[[main]]
+name = "Χοκκάιντο"
+pageRef = "/areas/hokkaido/"
+parent = "Περιοχές"
+weight = 3
+
+[[main]]
+name = "Χόνσου"
+parent = "Περιοχές"
+pageRef = "/areas/honshu/"
+weight = 4
+
+[[main]]
+name = "Κιούσου"
+parent = "Περιοχές"
+pageRef = "/areas/kyushu/"
+weight = 5
+
+[[main]]
+name = "Οκινάουα"
+parent = "Περιοχές"
+pageRef = "/areas/okinawa/"
+weight = 6
+
+[[main]]
+name = "Σικόκου"
+parent = "Περιοχές"
+pageRef = "/areas/shikoku/"
+weight = 6
+
+[[main]]
+name = "Στηρίξτε μας"
+pageRef = "/support"
+weight = 7
+
+[[main]]
+name = "YouTube"
+url = "https://youtube.com"
+pre = "youtube"
+weight = 8
+
+[[main]]
+name = "Συμβουλές"
+pageRef = "tips"
+weight = 3
