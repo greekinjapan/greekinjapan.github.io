@@ -1,1 +1,2 @@
-Homepage 2
+
+![logo](/img/logo.png)

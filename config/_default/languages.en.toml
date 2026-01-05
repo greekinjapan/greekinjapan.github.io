@@ -3,6 +3,7 @@ languageCode = "en"
 languageName = "English"
 weight = 1
 title = "🇬🇷【Greek in Japan】🇯🇵"
+logo = "/img/logo.png"
 
 [params]
 displayName = "EN 🇬🇧"

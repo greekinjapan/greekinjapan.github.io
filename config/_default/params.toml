@@ -19,6 +19,7 @@ enableLanguageSwitching = true
 
 [header]
 layout = "basic"
+logo = "img/logo.png" 
 
 [footer]
 showMenu = true

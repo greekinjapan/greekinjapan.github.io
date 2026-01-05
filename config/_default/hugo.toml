@@ -5,6 +5,7 @@
 theme = "blowfish" # UNCOMMENT THIS LINE
 # baseURL = "https://your_domain.com/"
 defaultContentLanguage = "en"
+logo = "/img/logo.png"
 
 [languages]
 [languages.en]
