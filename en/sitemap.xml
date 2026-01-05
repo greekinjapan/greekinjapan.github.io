@@ -65,13 +65,13 @@
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
-      hreflang="ja"
-      href="http://localhost:1313/ja/"
+      hreflang="gr"
+      href="http://localhost:1313/gr/"
     />
     <xhtml:link
       rel="alternate"
-      hreflang="gr"
-      href="http://localhost:1313/gr/"
+      hreflang="ja"
+      href="http://localhost:1313/ja/"
     />
     <xhtml:link
       rel="alternate"
@@ -128,13 +128,13 @@
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
-      hreflang="gr"
-      href="http://localhost:1313/gr/tips/"
+      hreflang="ja"
+      href="http://localhost:1313/ja/tips/"
     />
     <xhtml:link
       rel="alternate"
-      hreflang="ja"
-      href="http://localhost:1313/ja/tips/"
+      hreflang="gr"
+      href="http://localhost:1313/gr/tips/"
     />
     <xhtml:link
       rel="alternate"
